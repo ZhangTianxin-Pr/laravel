@@ -1,0 +1,17 @@
+table.table-expandable > tbody > tr:nth-child(odd) {
+    cursor: pointer;
+    /*规定光标的不同形�?(pointer是手的形�?*/
+    /*table(class为table-expandable)下面的tbody属性下面的tr属性，tr中的子元素，Odd(奇数�?�?even(偶数�?*/
+}
+
+table.table-expandable.table-hover > tbody > tr:nth-child(even):hover td {
+    background-color: white;
+}
+
+table.table-expandable > tbody > tr div.table-expandable-arrow {
+    background:transparent url(../image/arrows.png) no-repeat scroll 0px -16px; width:16px; height:16px; display:block;
+}
+
+table.table-expandable > tbody > tr div.table-expandable-arrow.up {
+    background-position:0px 0px;
+}

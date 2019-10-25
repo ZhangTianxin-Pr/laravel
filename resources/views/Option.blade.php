@@ -1,0 +1,379 @@
+@extends('layouts.all')
+@section('title')
+    Drosophila-Option
+@stop
+@section('content')
+
+    <p class="p-select">
+        <img src="{{URL::asset('/image/pj-15.png')}}"/>
+        Visualization
+    </p>
+
+
+
+<div class="container">
+    <div class="row">
+        <form class="form-inline" method="post" name="form_chrom" action="{{ route('get_option') }}" id="form_chrom">
+                {{ csrf_field() }}
+            <div class="col-sm-4">
+                <select multiple class="form-control" name="select_factor" id="" onchange="submitfactor();" style="width:90%;" >
+                    <option>ab</option>
+                    <option>abda</option>
+                    <option>abdb</option>
+                    <option>ac</option>
+                    <option>acf</option>
+                    <option>ada2b</option>
+                    <option>add1</option>
+                    <option>adf1</option>
+                    <option>ago2</option>
+                    <option>aly</option>
+                    <option>antp</option>
+                    <option>aop</option>
+                    <option>ash1</option>
+                    <option>ash2</option>
+                    <option>atf3</option>
+                    <option>ato</option>
+                    <option>barr</option>
+                    <option>bcd</option>
+                    <option>bigh1</option>
+                    <option>bon</option>
+                    <option>br</option>
+                    <option>br140</option>
+                    <option>brca2</option>
+                    <option>brk</option>
+                    <option>brm</option>
+                    <option>brwd</option>
+                    <option>br-core</option>
+                    <option>cad</option>
+                    <option>cap-d3</option>
+                    <option>cbt</option>
+                    <option>caph2</option>
+                    <option>cbp</option>
+                    <option>cdk9</option>
+                    <option>cdc45</option>
+                    <option>cdk12</option>
+                    <option>cg</option>
+                    <option>cg7804</option>
+                    <option>cg8436</option>
+                    <option>cg8478</option>
+                    <option>cg9740</option>
+                    <option>chro</option>
+                    <option>cic</option>
+                    <option>cid</option>
+                    <option>clamp</option>
+                    <option>clk</option>
+                    <option>cnc</option>
+                    <option>cp190</option>
+                    <option>creb</option>
+                    <option>crtc</option>
+                    <option>ctbp</option>
+                    <option>ctcf</option>
+                    <option>cuff</option>
+                    <option>cyc</option>
+                    <option>d</option>
+                    <option>dac</option>
+                    <option>deadlock</option>
+                    <option>dfd</option>
+                    <option>disco</option>
+                    <option>dl</option>
+                    <option>dll</option>
+                    <option>dnaj1</option>
+                    <option>dp1</option>
+                    <option>dre4</option>
+                    <option>dref</option>
+                    <option>dring</option>
+                    <option>dsx</option>
+                    <option>dwg</option>
+                    <option>e93</option>
+                    <option>e2f</option>
+                    <option>ecr</option>
+                    <option>eif4a3</option>
+                    <option>eip74ef</option>
+                    <option>elav</option>
+                    <option>ell</option>
+                    <option>elys</option>
+                    <option>en</option>
+                    <option>epc</option>
+                    <option>esg</option>
+                    <option>etl1</option>
+                    <option>eve</option>
+                    <option>exd</option>
+                    <option>ez</option>
+                    <option>facs</option>
+                    <option>faire</option>
+                    <option>fer3</option>
+                    <option>foxo</option>
+                    <option>fru</option>
+                    <option>fs(1)h</option>
+                    <option>gcn5</option>
+                    <option>gcm</option>
+                    <option>gfzf</option>
+                    <option>GFP</option>
+                    <option>glcnac</option>
+                    <option>grh</option>
+                    <option>gro</option>
+                    <option>gt</option>
+                    <option>gug</option>
+                    <option>h</option>
+                    <option>h1</option>
+                    <option>h2aub1</option>
+                    <option>h2av</option>
+                    <option>h2b</option>
+                    <option>h3ac</option>
+                    <option>h3k27me1</option>
+                    <option>h3k4me1</option>
+                    <option>h3k4me2</option>
+                    <option>h3k4me3</option>
+                    <option>h3k9ac</option>
+                    <option>h3K9acS10ph</option>
+                    <option>h3k9me1</option>
+                    <option>h3k9me2</option>
+                    <option>h3k9me3</option>
+                    <option>h3k14ac</option>
+                    <option>h3k18ac</option>
+                    <option>h3k23ac</option>
+                    <option>h3k27ac</option>
+                    <option>h3k27me1</option>
+                    <option>h3k27me2</option>
+                    <option>h3k27me3</option>
+                    <option>h3K27acS28ph</option>
+                    <option>h3k36me1</option>
+                    <option>h3k36me2</option>
+                    <option>h3k36me3</option>
+                    <option>h3k79me1</option>
+                    <option>h3k79me2</option>
+                    <option>h3k79me3</option>
+                    <option>h3S10ph</option>
+                    <option>h4</option>
+                    <option>h4ac</option>
+                    <option>h4k5ac</option>
+                    <option>h4k8ac</option>
+                    <option>h4k16ac</option>
+                    <option>h4k20me1</option>
+                    <option>hb</option>
+                    <option>hdac1</option>
+                    <option>hdac3</option>
+                    <option>hdac4</option>
+                    <option>hdac6</option>
+                    <option>hdac11</option>
+                    <option>hr4</option>
+                    <option>hrm</option>
+                    <option>hkb</option>
+                    <option>hlpp1</option>
+                    <option>hmgd1</option>
+                    <option>hmr</option>
+                    <option>hnf4</option>
+                    <option>hp1</option>
+                    <option>hp1a</option>
+                    <option>hp2</option>
+                    <option>hp4</option>
+                    <option>hr39</option>
+                    <option>hr78</option>
+                    <option>hsf</option>
+                    <option>hsp90</option>
+                    <option>hth</option>
+                    <option>ibf1</option>
+                    <option>ice1</option>
+                    <option>insv</option>
+                    <option>jarid2</option>
+                    <option>jil-1</option>
+                    <option>jim</option>
+                    <option>jumu</option>
+                    <option>kdm2</option>
+                    <option>kdm4a</option>
+                    <option>kdm5</option>
+                    <option>kmg</option>
+                    <option>kn</option>
+                    <option>kni</option>
+                    <option>kr</option>
+                    <option>l3mbt</option>
+                    <option>lab</option>
+                    <option>lacz</option>
+                    <option>lam</option>
+                    <option>lark</option>
+                    <option>lilli</option>
+                    <option>lmd</option>
+                    <option>lola</option>
+                    <option>lov</option>
+                    <option>lpt</option>
+                    <option>lsd1</option>
+                    <option>m1bp</option>
+                    <option>mad</option>
+                    <option>mago</option>
+                    <option>mbdr2</option>
+                    <option>mcm</option>
+                    <option>mcm2</option>
+                    <option>mcrs2</option>
+                    <option>med1</option>
+                    <option>med30</option>
+                    <option>mel</option>
+                    <option>mef2</option>
+                    <option>mi-2</option>
+                    <option>mle</option>
+                    <option>mlf</option>
+                    <option>mod</option>
+                    <option>modmdg4</option>
+                    <option>mof</option>
+                    <option>mot1</option>
+                    <option>mrg15</option>
+                    <option>msl</option>
+                    <option>msl1</option>
+                    <option>msl2</option>
+                    <option>msl3</option>
+                    <option>myb</option>
+                    <option>myc</option>
+                    <option>myst5</option>
+                    <option>n</option>
+                    <option>ndf</option>
+                    <option>nelf-e</option>
+                    <option>nipped-b</option>
+                    <option>nls</option>
+                    <option>nonstop</option>
+                    <option>nsl1</option>
+                    <option>nsl3</option>
+                    <option>nup93</option>
+                    <option>nup98</option>
+                    <option>nurf</option>
+                    <option>opbp</option>
+                    <option>orc</option>
+                    <option>orc2</option>
+                    <option>ovo</option>
+                    <option>parp</option>
+                    <option>pb</option>
+                    <option>pc</option>
+                    <option>pcl</option>
+                    <option>pds5</option>
+                    <option>ph</option>
+                    <option>pho</option>
+                    <option>pita</option>
+                    <option>piwi</option>
+                    <option>pnt</option>
+                    <option>pof</option>
+                    <option>PolII</option>
+                    <option>prd</option>
+                    <option>pr-set7</option>
+                    <option>psc</option>
+                    <option>psq</option>
+                    <option>rad21</option>
+                    <option>rbf</option>
+                    <option>rhi</option>
+                    <option>rib</option>
+                    <option>rnps1</option>
+                    <option>row</option>
+                    <option>rpd3</option>
+                    <option>rrp6</option>
+                    <option>rrp40</option>
+                    <option>rsf1</option>
+                    <option>rump</option>
+                    <option>sa</option>
+                    <option>sc</option>
+                    <option>scm</option>
+                    <option>scr</option>
+                    <option>scute</option>
+                    <option>sd</option>
+                    <option>set1</option>
+                    <option>sfmbt</option>
+                    <option>sgf11</option>
+                    <option>sha</option>
+                    <option>shep</option>
+                    <option>shn</option>
+                    <option>sim</option>
+                    <option>sin3a</option>
+                    <option>smc1</option>
+                    <option>smc3</option>
+                    <option>smox</option>
+                    <option>sna</option>
+                    <option>so</option>
+                    <option>sp1</option>
+                    <option>spps</option>
+                    <option>spt3</option>
+                    <option>spt5</option>
+                    <option>sr</option>
+                    <option>ssrp</option>
+                    <option>stat92e</option>
+                    <option>suh</option>
+                    <option>suhw</option>
+                    <option>sumo</option>
+                    <option>suur</option>
+                    <option>su(var)</option>
+                    <option>su(var)3-3</option>
+                    <option>su(var)3-7</option>
+                    <option>su(var)3-9</option>
+                    <option>suz12</option>
+                    <option>tbp</option>
+                    <option>tbph</option>
+                    <option>tcf</option>
+                    <option>temp</option>
+                    <option>tfiia</option>
+                    <option>tfiib</option>
+                    <option>tfiiic</option>
+                    <option>tll</option>
+                    <option>top3b</option>
+                    <option>trem</option>
+                    <option>trf2</option>
+                    <option>trl</option>
+                    <option>trr</option>
+                    <option>trx</option>
+                    <option>ts</option>
+                    <option>ttk</option>
+                    <option>twi</option>
+                    <option>ubh2b</option>
+                    <option>ubqn</option>
+                    <option>ubx</option>
+                    <option>uh</option>
+                    <option>upf1</option>
+                    <option>upset</option>
+                    <option>usp</option>
+                    <option>utx</option>
+                    <option>velo</option>
+                    <option>vtd</option>
+                    <option>w</option>
+                    <option>wapl</option>
+                    <option>wds</option>
+                    <option>y14</option>
+                    <option>yki</option>
+                    <option>yl-1</option>
+                    <option>z4</option>
+                    <option>zelda</option>
+                    <option>zen</option>
+                    <option>zfh1</option>
+                    <option>zipic</option>
+                    <option>zld</option>
+
+                </select>
+            </div>
+            <div class="col-sm-5">
+                <select class="form-control" name="chrom" style="width: 80%;margin-bottom: 33px;">
+                    <option>chrom2L</option>
+                    <option>chrom2R</option>
+                    <option>chrom3L</option>
+                    <option>chrom3R</option>
+                    <option>chrom4</option>
+                    <option>chromX</option>
+                    <option>chromY</option>
+                </select>
+                <input type="text" class="form-control" name="chromstart" placeholder="ChromStart" style="margin-bottom: 32px;width: 80%;">
+                <input type="text" class="form-control" name="chromend" placeholder="ChromEnd" style="width: 80%;">
+            </div>
+            <div class="col-sm-3">
+                <button type="submit" class="btn btn-default option-input-button">Download PDF</button>
+                <button type="submit" class="btn btn-default option-input-button">submit</button>
+            </div>
+        </form>
+    </div>
+</div>
+
+
+
+<!--
+    <form method="post" name="form_download">
+        <button type="submit" class="btn btn-default option-input-button">Download PDF</button>
+    </form>
+-->
+
+<div class="tab3">
+    <p>Draw the figure</p>
+</div>
+
+
+@stop
